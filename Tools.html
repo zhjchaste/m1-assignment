@@ -2,17 +2,18 @@
 <html>
     <head>
         <title>My Second Page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div id="container">
+        <div id="tools">
              <!-- this is for Brand of Site -->
             <header><h1>Find your Pets</h1></header>
             <!-- Main Navigation -->
-            <nav>
+            <nav class="main-menu">
                 <ul>
                     <li><a href="index.html">Meet featured pets</a></li>
                     <li><a href="Tools.html">use our tools</a></li>
-                    <li><a href="#">Check out adoption advice</a></li>
                     <li><a href="contact.html">Contact us</a></li>
                 </ul>
             </nav>
@@ -21,7 +22,7 @@
             <!-- Main Content-->
             <main>
 
-                <table border="1">
+                <table>
                 <caption>type of pets</caption>
                 <thead>
                     <tr>
@@ -51,12 +52,23 @@
 
             <!-- Footer information -->
             <footer>
-                <div id="nondisclaimer"> 
-                    <div class="copy">&copy; Copyright 2023:Find Your Pets.com</footer> </div>
-                    <div class="socail">
-                        <h3>Facebook Image</h3>
-                        <h3>Instagram Image</h3>  
-                        <h3>Twitter Image</h3>    
+                <div id="nondisclaimer">
+                    <div class="copy">&copy; Copyright 2023::Find your pets.com</div>
+
+                    
+                    <div class="social">
+                     <a href="#" class="fa fa-facebook"></a>
+                     <a href="#" class="fa fa-instagram"></a> 
+                     <a href="#" class="fa fa-twitter"></a>
+
+                    </div>
+
+                </div>
+                <div id="disclaimer">
+                    <p></p>
+
+                </div>
+            </footer>
         </div>
     </body>
 </html>

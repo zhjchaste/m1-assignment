@@ -2,17 +2,18 @@
 <html>
     <head>
         <title>My Third Page</title>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="container">
+        <div id="contact">
              <!-- this is for Brand of Site -->
              <header><h1>Find your Pets</h1></header>
             <!-- Main Navigation -->
-            <nav>
+            <nav class="main-menu">
                 <ul>
                     <li><a href="index.html">Meet featured pets</a></li>
                     <li><a href="Tools.html">use our tools</a></li>
-                    <li><a href="#">Check out adoption advice</a></li>
                     <li><a href="contact.html">Contact us</a></li>
                 </ul>
             </nav>
@@ -20,7 +21,7 @@
 
             <!-- Main Content-->
             <main>
-                <img src="images/dog2.jpeg" alt="dog and female" width="700" height="641"> 
+               
                 
                 <p></p>
 
@@ -33,29 +34,29 @@
         <form action="/contact" method="post">
             <fieldset>
                 <legend>contact form</legend>
-                <label>Enter your full name</label><br>
-                <input type="text" name="name"><br>
+                <label>Enter your full name</label>
+                <input type="text" name="name">
 
-                <label>Enter your email</label><br>
-                <input type="email" name="email"><br>
+                <label>Enter your email</label>
+                <input type="email" name="email">
 
-                <label>Enter your phone</label><br>
-                <input type="text" name="phone"><br>
+                <label>Enter your phone</label>
+                <input type="text" name="phone">
 
-                <br><label>How should we contact you?</label><br>
+                <label>How should we contact you?</label>
                 <input type="checkbox" name="Contact" value="Email" >Email
-                <input type="checkbox" name="Contact" value="phone">phone<br>
+                <input type="checkbox" name="Contact" value="phone">phone
 
-                <br><label>what types of pets would you like to adoption?</label><br>
+                <label>what types of pets would you like to adoption?</label>
                 <select>
                     <option>dogs</option>
                     <option>cats</option>
                     <option>others</option>
-                    <label>others</label><br>
-                <input type="text" name="name"><br>
+                    <label>others</label>
+                <input type="text" name="name">
 
-                <br><label>How did you hear about us:</label><br>
-                <br><textarea row="10" cols="40"></textarea><br>
+                <label>How did you hear about us:</label>
+                <textarea row="5" cols="30"></textarea>
                 <input type="submit" value="submit">
             </fieldset>
                 </form>
@@ -65,9 +66,23 @@
 
             <!-- Footer information -->
             <footer>
-                <div id="nondisclaimer"> 
-                    <div class="copy">&copy; Copyright 2023:Find Your Pets.com</footer> </div>
+                <div id="nondisclaimer">
+                    <div class="copy">&copy; Copyright 2023::Find your pets.com</div>
+
                     
+                    <div class="social">
+                     <a href="#" class="fa fa-facebook"></a>
+                     <a href="#" class="fa fa-instagram"></a> 
+                     <a href="#" class="fa fa-twitter"></a>
+
+                    </div>
+
+                </div>
+                <div id="disclaimer">
+                    <p></p>
+
+                </div>
+            </footer>
         </div>
     </body>
 </html>
