@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+<body>
+<div id="home">
+    <!-- this is for Brand of Site -->
+    <header>
+        <h1>Find your Pets</h1>
+    </header>
+    <!-- Main Navigation -->
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Meet Featured Pets</a></li>
+            <li><a href="Tools.html">Use Our Tools</a></li>
+            <li><a href="gallery.html">Check out Pets</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <!-- End of Main Navigation -->
+
+    <!-- Main Content-->
+    <main>
+        <h1>Ready to adopt a pet?</h1>
+
+        <ul id="album"></ul>
+        <!--<li id="photo"><img src="images/pet1.jpg"></li>
+                <li id="photo"><img src="images/pet2.jpg">
+                <li id="photo"><img src="images/pet3.jpg">
+                <li id="photo"><img src="images/pet4.jpg">
+                <li id="photo"><img src="images/pet5.jpg">
+                <li id="photo"><img src="images/pet6.jpg">
+                <li id="photo"><img src="images/pet7.jpg">
+                <li id="photo"><img src="images/pet8.jpg">
+                <li id="photo"><img src="images/pet9.jpg">
+                <li id="photo"><img src="images/pet10.jpg">-->
+                        
+
+
+    </main>
+    <!-- End of main content -->
+
+    <!-- Footer information -->
+    <footer>
+        <div id="nondisclaimer">
+            <div class="copy">&copy; 2023 Find your pets.com</div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
+        </div>
+        <div id="disclaimer">
+            <p></p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            var photos = [];
+            var fileNames = [];
+            var captions = [];
+            var imageList = [];
+            var openList = "<li class='photo'>";
+            var closeList = "</li>";
+
+            for (var i = 0; i < 10; i++) {
+                fileNames.push("pet" + (i + 1));
+                photos.push("<img src='images/" + fileNames[i] + ".jpg'>");
+                if (i < 5) {
+                    captions.push("cat " + (i + 1));
+                } else {
+                    captions.push("dog " + (i - 4));
+                }
+                var image = openList + photos[i] + "<div class='caption'>" + captions[i] + "</div>" + closeList;
+                imageList.push(image);
+            }
+
+            document.getElementById("album").innerHTML = imageList.join("");
+        }
+    </script>
+</div>
+</body>
+</html>
