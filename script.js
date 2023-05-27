@@ -2,9 +2,8 @@ window.onload = function() {
     var photos = [];
     var fileNames = [];
     var captions = [];
+    var descriptions = [];
     var imageList = [];
-    var openList = "<li class='photo'>";
-    var closeList = "</li>";
 
     for (var i = 0; i < 10; i++) {
         fileNames.push("pet" + (i + 1));
@@ -14,64 +13,55 @@ window.onload = function() {
         } else {
             captions.push("dog " + (i - 4));
         }
-        var image = openList + photos[i] + "<div class='caption'>" + captions[i] + "</div>" + closeList;
-        imageList.push(image);
-    }
-
-    document.getElementById("album").innerHTML = imageList.join("");
-}
-window.onload = function() {
-    var photos = [];
-    var fileNames = [];
-    var captions = [];
-    var imageList = [];
-    var openList = "<li class='photo'>";
-    var closeList = "</li>";
-
-    for (var i = 0; i < 10; i++) {
-        fileNames.push("pet" + (i + 1));
-        photos.push("<img src='images/" + fileNames[i] + ".jpg'>");
-        if (i < 5) {
-            captions.push("cat " + (i + 1));
-        } else {
-            captions.push("dog " + (i - 4));
-        }
-        var image = openList + photos[i] + "<div class='caption' onclick='showInfoBox(\"" + captions[i] + "\")'>" + captions[i] + "</div>" + closeList;
+        descriptions.push("This is a description of " + captions[i]);
+        var image = "<li class='photo' onmouseover='showCaption(this)' onmouseout='hideCaption(this)' onclick='showDescription(this)'>" +
+            photos[i] +
+            "<div class='caption'>" + captions[i] + "</div>" +
+            "<div class='description' style='display: none;'>" + descriptions[i] + "</div>" +
+            "</li>";
         imageList.push(image);
     }
 
     document.getElementById("album").innerHTML = imageList.join("");
 }
 
-function openInfoBox(title, text) {
-    var infoHeading = document.getElementById('infoHeading');
-    var infoText = document.getElementById('infoText');
+function showCaption(element) {
+    var caption = element.getElementsByClassName("caption")[0];
+    caption.style.display = "block";
+}
 
-    infoHeading.textContent = title;
-    infoText.textContent = text;
-    document.getElementById('infoBox').style.display = 'block';
+function hideCaption(element) {
+    var caption = element.getElementsByClassName("caption")[0];
+    caption.style.display = "none";
+}
+
+function showDescription(element) {
+    var description = element.getElementsByClassName("description")[0];
+    description.style.display = "block";
 }
 
 function closeInfoBox() {
-    document.getElementById('infoBox').style.display = 'none';
+    var infoBox = document.getElementById("infoBox");
+    infoBox.style.display = "none";
 }
-function showContactInput() {
-    var contactMethod = document.getElementById("contactMethod").value;
-    var emailLabel = document.getElementById("emailLabel");
-    var emailInput = document.getElementById("emailInput");
-    var phoneLabel = document.getElementById("phoneLabel");
-    var phoneInput = document.getElementById("phoneInput");
+function showDescription(element) {
+    var infoBox = document.createElement("div");
+    infoBox.className = "infoBox";
+    var infoHeading = document.createElement("h2");
+    infoHeading.textContent = "Description";
+    var infoText = document.createElement("p");
+    var description = element.getElementsByClassName("description")[0].textContent;
+    infoText.textContent = description;
+    var closeButton = document.createElement("a");
+    closeButton.href = "#";
+    closeButton.textContent = "Close";
+    closeButton.onclick = function() {
+        infoBox.style.display = "none";
+        return false;
+    };
 
-    emailLabel.classList.remove("show-label");
-    emailInput.style.display = "none";
-    phoneLabel.classList.remove("show-label");
-    phoneInput.style.display = "none";
-
-    if (contactMethod === "email") {
-        emailLabel.classList.add("show-label");
-        emailInput.style.display = "block";
-    } else if (contactMethod === "phone") {
-        phoneLabel.classList.add("show-label");
-        phoneInput.style.display = "block";
-    }
+    infoBox.appendChild(infoHeading);
+    infoBox.appendChild(infoText);
+    infoBox.appendChild(closeButton);
+    document.body.appendChild(infoBox);
 }
