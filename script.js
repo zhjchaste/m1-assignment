@@ -44,24 +44,26 @@ function closeInfoBox() {
     var infoBox = document.getElementById("infoBox");
     infoBox.style.display = "none";
 }
-function showDescription(element) {
-    var infoBox = document.createElement("div");
-    infoBox.className = "infoBox";
-    var infoHeading = document.createElement("h2");
-    infoHeading.textContent = "Description";
-    var infoText = document.createElement("p");
-    var description = element.getElementsByClassName("description")[0].textContent;
-    infoText.textContent = description;
-    var closeButton = document.createElement("a");
-    closeButton.href = "#";
-    closeButton.textContent = "Close";
-    closeButton.onclick = function() {
-        infoBox.style.display = "none";
-        return false;
-    };
 
-    infoBox.appendChild(infoHeading);
-    infoBox.appendChild(infoText);
-    infoBox.appendChild(closeButton);
-    document.body.appendChild(infoBox);
+function closeInfoBox() {
+    var infoBox = document.getElementById("infoBox");
+    infoBox.style.display = "none";
 }
+
+function openLightbox(element) {
+    var imageSrc = element.getAttribute("data-image");
+    var caption = element.getAttribute("data-caption");
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImage = document.getElementById("lightboxImage");
+
+    lightboxImage.src = imageSrc;
+    lightboxImage.alt = caption;
+    lightbox.style.display = "block";
+}
+
+function closeLightbox() {
+    var lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+}
+    
+
